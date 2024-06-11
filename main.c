@@ -2,7 +2,6 @@
 
 #include "once.h"
 
-// User.
 void dummy_once_func(void)
 {
 	printf("only once wheeee\n");
@@ -14,7 +13,7 @@ void *thread(void *ptr)
 	once_do(o, dummy_once_func);
 	return NULL;
 }
-// #define WCOUNT 32755
+
 #define WCOUNT 99999
 pthread_t ts[WCOUNT];
 void workers(Once *o)
